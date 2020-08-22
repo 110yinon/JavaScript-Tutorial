@@ -1,13 +1,13 @@
-// functions declaration
-function greet(){
-    console.log('hello there');
+// recieve parameter
+const speak = function(name){
+    console.log(`good day ${name}`);
+}
+// pass in argument
+speak('mario');
+
+// give the parameter a default value:
+const speak2 = function(name = 'sara'){
+    console.log(`good day ${name}`);
 }
 
-// function expression
-const speak = function(){
-    console.log('good day!');
-}
-
-// functions invoke
-greet();
-speak();
+speak2();
