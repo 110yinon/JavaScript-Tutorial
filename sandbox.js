@@ -1,59 +1,27 @@
-const userLeft = false;
-const userWatchingCatMeme = false;
+// object literals
 
-function watchTutorialCallback(callback, errorCallback) {
-    if (userLeft) {
-        errorCallback({
-            name: 'User Left',
-            message: ':('
-        })
-    } else if (userWatchingCatMeme) {
-        errorCallback({
-            name: 'User Watching Cat Meme',
-            message: 'WebDevSimplifeid < Cat'
-        })
-    } else {
-        callback('Thumbs up and subscribe')
-    }
-}
+let user = {
+    name: 'crystal',
+    age: 30,
+    email: 'crystal@thenetninja.co.uk',
+    location: 'berlin',
+    blogs: ['why mac & cheese rules', '10 things to do with marmite']
+};
 
+console.log(user);
+console.log(user.name); // crystal
 
-watchTutorialCallback(msg => {
-    console.log('Success: ' + msg);
-}, err => {
-    console.log(err.name + ' ' + err.message);
-})
+user.age = 35;
+console.log(user.age); // 35
 
-// *****************************************
-// *****************************************
-// *****************************************
-// *****************************************
-// *****************************************
-// *****************************************
+// same
+user['age'] = 40;
+console.log(user['age']); // 40
 
-function watchTutorialCallbackPromise() {
-    return new Promise((callback, errorCallback) => {
-        if (userLeft) {
-            errorCallback({
-                name: 'User Left',
-                message: ':('
-            })
-        } else if (userWatchingCatMeme) {
-            errorCallback({
-                name: 'User Watching Cat Meme',
-                message: 'WebDevSimplifeid < Cat'
-            })
-        } else {
-            callback('Thumbs up and subscribe')
-        }
-    });
-}
+const key = 'age';
+console.log(user[key]); // 40
 
-console.log('*****************************');
+console.log(typeof user); // object
 
 
-watchTutorialCallbackPromise().then(msg => {
-    console.log('Success: ' + msg);
-}).catch(err => {
-    console.log(err.name + ' ' + err.message);
-})
+
