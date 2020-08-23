@@ -5,23 +5,14 @@ let user = {
     age: 30,
     email: 'crystal@thenetninja.co.uk',
     location: 'berlin',
-    blogs: ['why mac & cheese rules', '10 things to do with marmite']
+    blogs: ['why mac & cheese rules', '10 things to do with marmite'],
+    login: () => console.log('the user logged in'),
+    logout: () => console.log('the user logged out')    
 };
 
-console.log(user);
-console.log(user.name); // crystal
+user.login();
+user.logout();
 
-user.age = 35;
-console.log(user.age); // 35
-
-// same
-user['age'] = 40;
-console.log(user['age']); // 40
-
-const key = 'age';
-console.log(user[key]); // 40
-
-console.log(typeof user); // object
 
 
 
