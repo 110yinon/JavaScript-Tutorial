@@ -1,9 +1,14 @@
+// get reference to the UI
+const ui = document.querySelector('.people');
 
-const peoples = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
 
-peoples.forEach(people => console.log(`hello ${people}`));
+let html = ``;
 
-// Same
-const logPeople = people => console.log(`hello ${people}`);
+people.forEach(person => {
+    // create html template
+    html += `<li style="color: purple">${person}</li>`
+});
 
-peoples.forEach(logPeople);
+console.log(html);
+ui.innerHTML = html;
