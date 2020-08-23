@@ -1,16 +1,14 @@
-const b = true;
-
 
 const myfunc = (callbackFunc) => {
     // do something inside myfunc
     let number = 50;
-    callbackFunc();
+    callbackFunc(number); // pass-in number to the callback function
 }
 
 // invoke myfunc
 myfunc(
-    ()=>{// pass-in callback function
+    value => {// pass-in callback function
         // do something inside myfunc
-        console.log('hello');
-    } 
+        console.log('the number is:', value);
+    }
 );
