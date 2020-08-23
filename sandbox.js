@@ -1,13 +1,16 @@
-// recieve parameter
-const speak = function(name){
-    console.log(`good day ${name}`);
-}
-// pass in argument
-speak('mario');
+const b = true;
 
-// give the parameter a default value:
-const speak2 = function(name = 'sara'){
-    console.log(`good day ${name}`);
+
+const myfunc = (callbackFunc) => {
+    // do something inside myfunc
+    let number = 50;
+    callbackFunc();
 }
 
-speak2();
+// invoke myfunc
+myfunc(
+    ()=>{// pass-in callback function
+        // do something inside myfunc
+        console.log('hello');
+    } 
+);
