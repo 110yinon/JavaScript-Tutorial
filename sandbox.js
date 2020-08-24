@@ -1,32 +1,11 @@
-// object literals
+const para = document.querySelector('.error');
+console.log(para);
 
-let user = {
-    name: 'crystal',
-    age: 30,
-    email: 'crystal@thenetninja.co.uk',
-    location: 'berlin',
-    blogs: ['why mac & cheese rules', '10 things to do with marmite'],
-    login: () => console.log('the user logged in'),
-    logout: () => console.log('the user logged out'),
-    logBlogs: function () {
-        console.log(this);// refers to user
-    },
-    logBlogs2: () => {
-        console.log(this);// refers to window !!!
-    },
+const paras = document.querySelectorAll('p'); // select all p tags
 
-    // Shorthand version for Regular function
-    // An easier way to write method in object:
-    logBlogs3(){
-        console.log(this);// refers to user
-    }
-};
+console.log(paras);
 
-user.logBlogs();
-user.logBlogs2();
-user.logBlogs3();
-console.log(this);// refers to window, the global object in JavaScript
+// console.log(paras[0]);
+paras.forEach(para => console.log(para));
 
-
-
-
+const errors = document.querySelectorAll('.error'); // select all error tags
