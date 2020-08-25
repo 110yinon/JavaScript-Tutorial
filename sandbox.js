@@ -1,11 +1,13 @@
-const para = document.querySelector('.error');
-console.log(para);
+// get an element by ID
+const title = document.getElementById('page-title'); // # required only on querySelector()
 
-const paras = document.querySelectorAll('p'); // select all p tags
+// get elements by their class name
+const errors = document.getElementsByClassName('error');
+console.log(errors);
+console.log(errors[0]);
 
+
+// get element by thier tag name
+const paras = document.getElementsByTagName('p');
 console.log(paras);
-
-// console.log(paras[0]);
-paras.forEach(para => console.log(para));
-
-const errors = document.querySelectorAll('.error'); // select all error tags
+console.log(paras[1]);
