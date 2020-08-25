@@ -1,11 +1,12 @@
-const link = document.querySelector('a');
+const title = document.querySelector('h1');
 
-console.log(link.getAttribute('href')); // https://www.google.com
-link.setAttribute('href','https://www.thenetninja.co.uk');
-link.innerText = 'The Net Ninja Website';
+// append border to style
+// opt 1
+let styleContent = title.getAttribute('style');
+title.setAttribute('style',styleContent + ';border: 5px solid black');
 
-const msg = document.querySelector('p');
-
-console.log(msg.getAttribute('class'));// 'error'
-msg.setAttribute('class','success');
-msg.setAttribute('style','color:red');// new attribute
+// opt 2
+console.log(title.style);
+title.style.border = '5px solid blue';
+title.style.color = 'red';
+title.style.fontSize = '70px';
