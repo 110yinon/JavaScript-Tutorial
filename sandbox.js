@@ -1,19 +1,11 @@
-// changing text content inside the first p tag on page
-const para = document.querySelector('p');
+const link = document.querySelector('a');
 
-console.log(para.innerText); // hello world
-para.innerText = 'ninjas are awesome';
-console.log(para.innerText); // ninjas are awesome
+console.log(link.getAttribute('href')); // https://www.google.com
+link.setAttribute('href','https://www.thenetninja.co.uk');
+link.innerText = 'The Net Ninja Website';
 
-// grabs all p tags
-const paras = document.querySelectorAll('p');
-paras.forEach(para => para.innerText += ' new text'); // append some new text to each one
+const msg = document.querySelector('p');
 
-
-const content = document.querySelector('.content');
-console.log(content.innerHTML);// <p>this is the content new text</p>
-content.innerHTML = '<h2>THIS IS A NEW H2</h2>'; // overwrite the p tag
-
-
-// const people = ['mario', 'luigi', 'yoshi'];
-// people.forEach(person => content.innerHTML += `<p>${person}</p>`)
+console.log(msg.getAttribute('class'));// 'error'
+msg.setAttribute('class','success');
+msg.setAttribute('style','color:red');// new attribute
