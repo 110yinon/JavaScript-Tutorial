@@ -1,13 +1,19 @@
-// get an element by ID
-const title = document.getElementById('page-title'); // # required only on querySelector()
+// changing text content inside the first p tag on page
+const para = document.querySelector('p');
 
-// get elements by their class name
-const errors = document.getElementsByClassName('error');
-console.log(errors);
-console.log(errors[0]);
+console.log(para.innerText); // hello world
+para.innerText = 'ninjas are awesome';
+console.log(para.innerText); // ninjas are awesome
+
+// grabs all p tags
+const paras = document.querySelectorAll('p');
+paras.forEach(para => para.innerText += ' new text'); // append some new text to each one
 
 
-// get element by thier tag name
-const paras = document.getElementsByTagName('p');
-console.log(paras);
-console.log(paras[1]);
+const content = document.querySelector('.content');
+console.log(content.innerHTML);// <p>this is the content new text</p>
+content.innerHTML = '<h2>THIS IS A NEW H2</h2>'; // overwrite the p tag
+
+
+// const people = ['mario', 'luigi', 'yoshi'];
+// people.forEach(person => content.innerHTML += `<p>${person}</p>`)
