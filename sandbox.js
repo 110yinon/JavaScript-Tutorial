@@ -1,18 +1,16 @@
 const article = document.querySelector('article');
+const button = document.querySelector('button');
 
-console.log(article.children); // HTMLCollection
-const elements = Array.from(article.children); // Convert HTMLCollection to Array
+button.addEventListener('click', () => console.log('you clicked me '));
 
-elements.forEach(element => {
-    element.classList.add('success');
+const items = document.querySelectorAll('li');
+
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        // console.log(e);
+        console.log(item);
+        console.log(e.target); // same as item
+
+        item.style.textDecoration = 'line-through';
+    });
 });
-
-const h2 = document.querySelector('h2');
-console.log(h2.parentElement); // article element
-console.log(h2.parentElement.parentElement); // body element
-
-console.log(h2.nextElementSibling); // p tag with lorem ipsum
-console.log(h2.previousElementSibling); // null because h2 is the first
-
-// chaining (usually not needed)
-console.log(h2.nextElementSibling.parentElement.children);
