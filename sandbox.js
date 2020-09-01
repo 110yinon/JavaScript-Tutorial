@@ -1,16 +1,18 @@
-// *********************************************************************
-// exercise:
-// give any tag a class of 'error' where error is inside the text
-// give any tag a class of 'success' where success is inside the text
-// *********************************************************************
+const article = document.querySelector('article');
 
-const paras = document.querySelectorAll('p');
+console.log(article.children); // HTMLCollection
+const elements = Array.from(article.children); // Convert HTMLCollection to Array
 
-paras.forEach(para=>{
-    if(para.innerText.includes('error')){
-        para.classList.add('error');
-    }
-    else if(para.innerText.includes('success')){
-        para.classList.add('success');
-    }
+elements.forEach(element => {
+    element.classList.add('success');
 });
+
+const h2 = document.querySelector('h2');
+console.log(h2.parentElement); // article element
+console.log(h2.parentElement.parentElement); // body element
+
+console.log(h2.nextElementSibling); // p tag with lorem ipsum
+console.log(h2.previousElementSibling); // null because h2 is the first
+
+// chaining (usually not needed)
+console.log(h2.nextElementSibling.parentElement.children);
