@@ -1,16 +1,15 @@
-const button = document.querySelector('button');
+const copy = document.querySelector('.copy-me');
 
-button.addEventListener('click', () => {
-    const li = document.createElement('li');
-    li.textContent = 'something new to do';
-    ul.prepend(li); // put the element on the top of the parent elements list
-    // ul.append(li); // put the element on the bottom of the parent elements list
+copy.addEventListener('copy', () => console.log('OI ! my content is copyright'));
+
+const box = document.querySelector('.box');
+
+box.addEventListener('mousemove', e => {
+    // console.log(e);
+    console.log(e.offsetX, e.offsetY);
 });
-
-const ul = document.querySelector('ul');
-ul.addEventListener('click', e => {
-    console.log(e.target); //refers to the clicked <li></li> element each time
-    if (e.target.tagName === 'LI') {
-        e.target.remove();
-    }
+// attached the event to the whole document
+document.addEventListener('wheel', e => {
+    // console.log(e);
+    console.log(e.pageX, e.pageY);
 });
