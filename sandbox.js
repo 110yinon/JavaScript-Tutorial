@@ -1,4 +1,3 @@
-const ul = document.querySelector('ul');
 const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
@@ -8,11 +7,10 @@ button.addEventListener('click', () => {
     // ul.append(li); // put the element on the bottom of the parent elements list
 });
 
-const items = document.querySelectorAll('li');
-
-items.forEach(item => {
-    item.addEventListener('click', e => {
-        // item.remove();
-        e.target.remove(); // same
-    });
+const ul = document.querySelector('ul');
+ul.addEventListener('click', e => {
+    console.log(e.target); //refers to the clicked <li></li> element each time
+    if (e.target.tagName === 'LI') {
+        e.target.remove();
+    }
 });
