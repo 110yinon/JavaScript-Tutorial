@@ -1,8 +1,9 @@
-const form = document.querySelector('form');
-const username = document.querySelector('#username');
+const username = '333shaunp343@@';
+const pattern = /^[a-z]{6,}$/;
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    console.log(username.value);
-    console.log(form.username.value); // same
-});
+let result = pattern.test(username);
+console.log(result); // false
+
+// Another method
+result = username.search(pattern);
+console.log(result); // return -1 (NO MATCH)
