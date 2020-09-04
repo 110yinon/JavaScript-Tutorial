@@ -1,9 +1,20 @@
-const username = '333shaunp343@@';
-const pattern = /^[a-z]{6,}$/;
+const form = document.querySelector('form');
+const feedback = document.querySelector('.feedback');
 
-let result = pattern.test(username);
-console.log(result); // false
+form.addEventListener('submit', e => {
+    e.preventDefault();
 
-// Another method
-result = username.search(pattern);
-console.log(result); // return -1 (NO MATCH)
+    // validation
+    const username = form.username.value;
+    const usernamePattern = /^[a-zA-Z]{6,12}$/;
+
+    if (usernamePattern.test(username)) {
+        // feedback good info
+        feedback.textContent = 'that username is valid';
+    }
+    else {
+        // feedback help info
+        feedback.textContent = 'username must contain letters only & be between 6-12 characters long';
+    }
+
+});
