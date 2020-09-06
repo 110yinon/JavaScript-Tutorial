@@ -14,21 +14,10 @@ form.addEventListener('submit', e => {
         }
     });
     // console.log(score);
+    window.scrollTo(0,0); // opt 1
     result.querySelector('span').textContent = `${score}%`;
     result.classList.remove('d-none');
+    // opt 2
+    // document.querySelector('.intro').id = 'topPage';// grab the first div on page
+    // window.location.href = '#topPage';
 });
-
-
-// window object (global object)
-
-console.log('hello');
-window.console.log('hello'); // same
-
-console.log(document.querySelector('form'));
-console.log(window.document.querySelector('form'));
-
-alert('hello');
-window.alert('hello');// same
-
-setTimeout(() => { alert('hey'); }, 3000);
-window.setTimeout(() => { alert('hey'); }, 3000);
