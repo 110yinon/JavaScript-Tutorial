@@ -13,11 +13,18 @@ form.addEventListener('submit', e => {
             score += 25;
         }
     });
-    // console.log(score);
-    window.scrollTo(0,0); // opt 1
-    result.querySelector('span').textContent = `${score}%`;
+    
+    window.scrollTo(0,0);    
     result.classList.remove('d-none');
-    // opt 2
-    // document.querySelector('.intro').id = 'topPage';// grab the first div on page
-    // window.location.href = '#topPage';
+
+    let output = 0;
+    const timer = setInterval(() => {
+        result.querySelector('span').textContent = `${output}%`;
+        if (score === output) {
+            clearInterval(timer);
+        }
+        else{            
+            output++;
+        }
+    }, 10);
 });
