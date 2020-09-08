@@ -1,6 +1,6 @@
-const scores = [10, 30, 15, 25, 50, 40, 5];
+const prices = [20, 10, 30, 25, 15, 40, 80, 5];
 
-const filteredScores = scores.filter(score => score > 20);
+const salePrices = prices.map(price => price / 2);
 
-console.log(scores);
-console.log(filteredScores);// [30, 25, 50, 40]
+console.log(prices);
+console.log(salePrices);
