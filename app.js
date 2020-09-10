@@ -1,39 +1,23 @@
-const todos = document.querySelector('ul');
-const search = document.querySelector('.search');
-const addInput = document.querySelector('.add-todo');
+const addForm = document.querySelector('.add');
+const list = document.querySelector('.todos');
 
-todos.addEventListener('click', e => {
-    if(e.target.tagName === 'IMG'){
-        e.target.parentElement.parentElement.remove(); // delete li tag
-    }
-});
+const generateTemplate = todo =>{
+    const html = `
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>${todo}</span>
+        <i class="far fa-trash-alt delete"></i>
+    </li>
+    `;
+    list.innerHTML += html;
+};
 
-search.addEventListener('keyup', e => {
-    Array.from(todos.children).forEach(todo => {
-        if (todo.innerText.includes(e.target.value)) {
-            todo.style.display = 'block';
-        }
-        else {
-            todo.style.display = 'none';
-        }
-    });
-});
-
-addInput.addEventListener('submit', e => {
+addForm.addEventListener('submit', e => {
     e.preventDefault();
-    // console.log(e.target.newTodo.value);
-    if (e.target.newTodo.value !== '') {
-        const li = document.createElement('li');
-        const div = document.createElement('div');
-        const span = document.createElement('span');
-        const img = document.createElement('img');
-        img.setAttribute('src','/assets/trash.svg');
-        div.classList.add('todo');
-        span.innerText = e.target.newTodo.value;
-        div.append(span);
-        div.append(img);
-        li.append(div);
-        todos.prepend(li);
+    const todo = addForm.add.value.trim();// trim remove spaces before/behind string
+    
+    if(todo.length){
+        generateTemplate(todo);
+        addForm.reset();// Clear all the input fields inside that form
     }
-    e.target.newTodo.value = '';
+
 });
