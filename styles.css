@@ -36,6 +36,7 @@ input{
     width: 400px;
     height: 35px;
     border: 2px solid #2a284c;
+    
 }
 form{
     display: flex; 
@@ -45,4 +46,11 @@ form{
 }
 label{
     margin: 15px auto;
+}
+img:hover{
+    cursor: pointer;
+}
+img{
+    width: 1.1em;
+    height: 1.1em;
 }
