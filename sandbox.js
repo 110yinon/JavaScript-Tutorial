@@ -17,12 +17,28 @@ const getTodos = (resource, callback) => {
     request.send();
 };
 
-getTodos('todos/luigi.json', (err, data) => {
-    console.log(data);// all of Luigi's todos
-    getTodos('todos/mario.json', (err, data) => {
-        console.log(data);// all of Mario's todos
-        getTodos('todos/shaun.json', (err, data) => {
-            console.log(data);// all of Shaun's todos            
-        })
+// promise example
+const getSomething = () => {
+    return new Promise((resolve, reject) => {
+        // fetch something
+        resolve('some data');
+        // reject('error');
+    });
+}
+
+// opt 1
+// getSomething()
+//     .then(data => {
+//         console.log(data);
+//     }, err => {
+//         console.log(err);
+//     })
+
+// opt 2 - BETTER
+getSomething()
+    .then(data => {
+        console.log(data);
     })
-});
+    .catch(err => {
+        console.log(err);
+    })
