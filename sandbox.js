@@ -1,13 +1,20 @@
-// the fetch API
-fetch('todos/luigi.json')// wrong resource
-    .then(response => {
-        if (response.status === 404) {
-            console.log('404 error, source not found');
-        }
-        else {
-            console.log('resolve', response);
-        }
-        return response.json();
+// async & await
+const getTodos = async () => {
+    
+    const response = await fetch('todos/luigi.json');
+    const data = await response.json();
+    // console.log(data);
+    return data;
+
+}
+
+console.log(1);
+console.log(2);
+
+getTodos()
+    .then(data => {
+        console.log(data);
     })
-    .then(data => console.log(data))
-    .catch(err => { console.log('reject', err) })
+
+console.log(3);
+console.log(4);
