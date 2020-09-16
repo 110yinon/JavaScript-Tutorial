@@ -1,10 +1,14 @@
 // async & await
 const getTodos = async () => {
-    
-    const response = await fetch('todos/luigi.json');
-    const data = await response.json();
-    // console.log(data);
-    return data;
+    let vals = ['kuku'];// some init value
+
+    let response = await fetch('todos/luigi.json');
+    vals = [...vals, await response.json()];
+
+    response = await fetch('todos/mario.json');
+    vals = [...vals, await response.json()];
+
+    return vals;
 
 }
 
