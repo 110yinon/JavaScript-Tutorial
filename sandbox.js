@@ -1,14 +1,15 @@
 // async & await
 const getTodos = async () => {
-    let vals = ['kuku'];// some init value
 
-    let response = await fetch('todos/luigi.json');
-    vals = [...vals, await response.json()];
+    const response = await fetch('todos/luigis.json');
 
-    response = await fetch('todos/mario.json');
-    vals = [...vals, await response.json()];
+    if(response.status !== 200) {
+        throw new Error('cannot fetch the data');// our own error message
+    }
 
-    return vals;
+    const data = await response.json();
+
+    return data;
 
 }
 
@@ -17,8 +18,9 @@ console.log(2);
 
 getTodos()
     .then(data => {
-        console.log(data);
+        console.log('resolved:', data);
     })
+    .catch(err => console.log('rejected:', err.message))
 
 console.log(3);
 console.log(4);
