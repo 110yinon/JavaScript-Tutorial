@@ -4,18 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <h1>Async JavaScript</h1>
+    <div class="grid">
 
+        <header>
+            <h1 class="app-title">Weather Ninja</h1>
+            <form>
+                <label for="location">Enter a location for weather information</label>
+                <input type="text" id="input-location">
+            </form>
+        </header>
 
+        <div class="info-section">
+            <div class="image"></div>
+            <div class="info">
+                <!-- <div class="small-cloud-img"></div> -->
+                <h3 class="location">Manchester</h3>
+                <h5 class="description">cloudy</h5>
+                <h1 class="temp">15.6 °C</h1>
+            </div>
+        </div>
+    </div>
 
-    <script src="/sandbox.js"></script>
+    <script src="/scripts/forecast.js"></script>
+    <script src="/scripts/app.js"></script>
 </body>
 
 </html>

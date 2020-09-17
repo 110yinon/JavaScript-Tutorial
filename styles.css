@@ -1,0 +1,84 @@
+/* variables */
+:root{
+    --bgColor:#eeedec;
+    --fontColor:#647787;
+    --imgBgColor:#e7ecf7
+}
+/* reset */
+body,p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+/* base styles */
+body{    
+    text-align: center;
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(50px,auto);
+    row-gap: 20px;
+}
+header, .info-section{
+    max-width: 350px;
+}
+.info-section{
+    box-shadow: 0px 20px 40px grey;
+    display: flex;
+    flex-direction: column;    
+}
+.info{
+    background-color: white;
+}
+.image{
+    width: 100%;
+    height: 45vh;
+    background-color: var(--imgBgColor);
+}
+/* .small-cloud-img{
+    width: 15%;
+    height: 50%;
+    background-color: crimson;
+    border-radius: 100%;
+} */
+input{
+    width: 97%;
+    font-size: 2em;
+    text-align: center;
+}
+input:focus{
+    outline-color: #55aaff;
+}
+label{
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.app-title{
+    margin-bottom: 20px;
+}
+.location{
+    margin: 15px;
+    font-size: 1.5em;
+}
+.temp{
+    margin: 30px;
+    font-size: 2.5em;
+}
+
+/* fonts */
+body,input{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ----------------------------------------- */
+header, .info-section{
+    grid-column: 2;
+}
+header{
+    grid-row: 2 / span 1;
+}
+.info-section{
+    grid-row: 3 / span 8 ;
+}
