@@ -1,13 +1,13 @@
 const cityForm = document.querySelector("form");
 const info = document.querySelector(".info");
 
-const updateUI = (data) => {
+const updateUI = ({ cityDetails, weather }) => {
 
     // const cityDetails = data.cityDetails;
     // const weather = data.weather;
 
     // destructure propetries
-    const { cityDetails, weather } = data;
+    // const { cityDetails, weather } = data;
 
     // update datails template
     info.innerHTML = `
