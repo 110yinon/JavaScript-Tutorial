@@ -76,7 +76,9 @@ label{
     margin: 30px;
     font-size: 2.5em;
 }
-
+.d-none{
+    display: none;
+}
 /* fonts */
 body,input{
     font-family: 'Roboto', sans-serif;

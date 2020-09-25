@@ -1,4 +1,25 @@
 const cityForm = document.querySelector("form");
+const info = document.querySelector(".info");
+
+const updateUI = (data) => {
+    
+    const cityDetails = data.cityDetails;
+    const weather = data.weather;
+
+    // update datails template
+    info.innerHTML = `
+        <div class="icon"></div>
+        <h3 class="location">${cityDetails.LocalizedName}</h3>
+        <h5 class="description">${weather.WeatherText}</h5>
+        <h1 class="temp">${weather.Temperature.Metric.Value} &deg;C</h1>
+    `
+
+    // remove the d-none class if present in info-section div
+    if(info.parentElement.classList.contains('d-none')){
+        info.parentElement.classList.remove('d-none');
+    }
+
+};
 
 const updateCity = async (city) => {
     const cityDetails = await getCity(city);
@@ -15,7 +36,7 @@ cityForm.addEventListener('submit', e => {
     cityForm.reset();
 
     updateCity(city)
-        .then(data => console.log(data))
+        .then(data => updateUI(data))
         .catch(err => console.log(err))
 
 });
