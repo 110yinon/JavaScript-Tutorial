@@ -2,9 +2,12 @@ const cityForm = document.querySelector("form");
 const info = document.querySelector(".info");
 
 const updateUI = (data) => {
-    
-    const cityDetails = data.cityDetails;
-    const weather = data.weather;
+
+    // const cityDetails = data.cityDetails;
+    // const weather = data.weather;
+
+    // destructure propetries
+    const { cityDetails, weather } = data;
 
     // update datails template
     info.innerHTML = `
@@ -15,7 +18,7 @@ const updateUI = (data) => {
     `
 
     // remove the d-none class if present in info-section div
-    if(info.parentElement.classList.contains('d-none')){
+    if (info.parentElement.classList.contains('d-none')) {
         info.parentElement.classList.remove('d-none');
     }
 
