@@ -1,21 +1,30 @@
 const cityForm = document.querySelector("form");
 const info = document.querySelector(".info");
+const img = document.querySelector(".image");
 
 const updateUI = ({ cityDetails, weather }) => {
 
-    // const cityDetails = data.cityDetails;
-    // const weather = data.weather;
-
-    // destructure propetries
-    // const { cityDetails, weather } = data;
-
     // update datails template
     info.innerHTML = `
-        <div class="icon"></div>
+        <img class="icon" src=""/>
         <h3 class="location">${cityDetails.LocalizedName}</h3>
         <h5 class="description">${weather.WeatherText}</h5>
         <h1 class="temp">${weather.Temperature.Metric.Value} &deg;C</h1>
-    `
+    `;
+    
+    // update the night/day & icon images
+    const icon = document.querySelector(".icon");
+    const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src', iconSrc);
+
+    let timeSrc = null;
+    if (weather.IsDayTime) {
+        timeSrc = 'img/day.svg';
+    }
+    else {
+        timeSrc = 'img/night.svg';
+    }
+    img.setAttribute('src', timeSrc);
 
     // remove the d-none class if present in info-section div
     if (info.parentElement.classList.contains('d-none')) {
@@ -41,6 +50,5 @@ cityForm.addEventListener('submit', e => {
     updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err))
-
 });
 
