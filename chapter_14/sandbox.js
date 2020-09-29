@@ -8,11 +8,6 @@ let age = localStorage.getItem('age');
 
 console.log(name, age);// mario 40
 
-// updating data
-localStorage.setItem('name', 'luigi');
-localStorage.age = '100';
-
-name = localStorage.getItem('name');
-age = localStorage.getItem('age');
-
-console.log(name, age);// luigi 100
+// deleting data from local storage
+localStorage.removeItem('name');
+// localStorage.clear();// clears the local storage
