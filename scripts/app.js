@@ -2,6 +2,15 @@ const cityForm = document.querySelector("form");
 const info = document.querySelector(".info");
 const img = document.querySelector(".image");
 
+addEventListener('load', () => {
+    const city = localStorage.getItem('city');
+    if (city) {
+        updateCity(city)
+            .then(data => updateUI(data))
+            .catch(err => console.log(err))
+    }
+});
+
 const updateUI = ({ cityDetails, weather }) => {
 
     // update datails template
@@ -40,6 +49,9 @@ cityForm.addEventListener('submit', e => {
 
     const city = e.target.location.value;
     cityForm.reset();
+
+    // set local storage
+    localStorage.setItem('city', city);    
 
     updateCity(city)
         .then(data => updateUI(data))
