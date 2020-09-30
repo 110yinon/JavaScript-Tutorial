@@ -21,9 +21,11 @@ class User {
 }
 
 class Admin extends User {
-    // if dont have its own ctor
-    // it automatically calls the ctor of extended class
-    
+    constructor(username, email, title) {
+        super(username,email); // must call inside the derived ctor
+        this.title = title;
+    }
+
     deleteUser(user) {
         users = users.filter(u => user !== u);
     }
@@ -33,13 +35,7 @@ class Admin extends User {
 // creating an instances of User class
 const userOne = new User('mario', 'mario@thenetninja.co.uk');
 const userTwo = new User('luigi', 'luigi@thenetninja.co.uk');
-const userThree = new Admin('shaun', 'shaun@thenetninja.co.uk');
+const userThree = new Admin('shaun', 'shaun@thenetninja.co.uk', 'black-belt-ninja');
 
 
-console.log(userOne, userTwo, userThree);
-
-let users = [userOne, userTwo, userThree];
-console.log(users);
-
-userThree.deleteUser(userTwo);
-console.log(users);
+console.log(userThree);
