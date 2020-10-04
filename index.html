@@ -4,36 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Databases</title>
 </head>
 
 <body>
+    
 
-    <div class="grid">
-
-        <header>
-            <h1 class="app-title">Weather Ninja</h1>
-            <form>
-                <label for="location">Enter a location for weather information</label>
-                <input type="text" id="location" autocomplete="off">
-            </form>
-        </header>
-
-        <div class="info-section d-none">
-            <img class="image"></img>
-            <div class="info">
-                <img class="icon" src=""/>
-                <h3 class="location">Manchester</h3>
-                <h5 class="description">cloudy</h5>
-                <h1 class="temp">15.6 &deg;C</h1>
+    <div class="container my-5">
+        <h2>Recipes</h2>
+        <ul>
+            <li>Mushroom pie</li>
+            <li>Veg curry</li>
+        </ul>
+        <form>
+            <label for="recipe">Add a new recipe:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="recipe" required>
+                <div class="input-group-append">
+                    <input type="submit" value="add" class="btn btn-outline-secondary">
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 
-    <script src="/scripts/forecast.js"></script>
-    <script src="/scripts/app.js"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCH0dWpa3X8yIemBN9oTxzoLoGGIds6PIs",
+            authDomain: "udemy-modern-javascript-6e12e.firebaseapp.com",
+            databaseURL: "https://udemy-modern-javascript-6e12e.firebaseio.com",
+            projectId: "udemy-modern-javascript-6e12e",
+            storageBucket: "udemy-modern-javascript-6e12e.appspot.com",
+            messagingSenderId: "78770982518",
+            appId: "1:78770982518:web:52fb301c20a969eadf1957",
+            measurementId: "G-54XQM4Q9VY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const db = firebase.firestore();
+    </script>
+    <script src="sandbox.js"></script>
 </body>
 
 </html>
