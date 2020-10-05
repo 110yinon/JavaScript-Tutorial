@@ -35,8 +35,9 @@ form.addEventListener('submit', e => {
     };
 
     db.collection('recipes').add(recipe)
-        .then(() => {
+        .then(doc => {
             console.log('recipe added');
+            addRecipe(recipe, doc.id);
         })
         .catch(err => console.log(err))
 });
@@ -46,7 +47,10 @@ list.addEventListener('click', e => {
     if (e.target.tagName === 'BUTTON') {
         const id = e.target.parentElement.getAttribute('data-id');
         db.collection('recipes').doc(id).delete()
-            .then(() => console.log('recipe deleted'))
+            .then(() => {
+                console.log('recipe deleted');
+                e.target.parentElement.remove();
+            })
             .catch(err => console.log(err))
     }
 });
