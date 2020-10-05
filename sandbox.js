@@ -14,15 +14,27 @@ const addRecipe = (recipe, id) => {
     list.innerHTML += html;
 };
 
+const deleteRecipe = (id) => {
+    const recipes = document.querySelectorAll('li');
+    recipes.forEach(recipe => {
+        if (recipe.getAttribute('data-id') === id) {
+            recipe.remove();
+        }
+    });
+};
+
 // get documents
-db.collection('recipes').get()
-    .then(snapshot => {
-        // when we have the data  
-        snapshot.docs.forEach(doc => {
+db.collection('recipes').onSnapshot(snapshot => {
+    snapshot.docChanges().forEach(change => {
+        const doc = change.doc;
+        if (change.type === 'added') {
             addRecipe(doc.data(), doc.id);
-        });
-    })
-    .catch(err => console.log(err))
+        }
+        else if (change.type === 'removed') {
+            deleteRecipe(doc.id);
+        }
+    });
+});
 
 //add documents
 form.addEventListener('submit', e => {
@@ -35,9 +47,8 @@ form.addEventListener('submit', e => {
     };
 
     db.collection('recipes').add(recipe)
-        .then(doc => {
+        .then(() => {
             console.log('recipe added');
-            addRecipe(recipe, doc.id);
         })
         .catch(err => console.log(err))
 });
@@ -49,7 +60,6 @@ list.addEventListener('click', e => {
         db.collection('recipes').doc(id).delete()
             .then(() => {
                 console.log('recipe deleted');
-                e.target.parentElement.remove();
             })
             .catch(err => console.log(err))
     }
