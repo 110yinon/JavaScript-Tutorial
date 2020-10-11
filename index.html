@@ -14,7 +14,7 @@
 
         <h1>Ninja Chat</h1>
 
-        
+
         <div class="chatroom">
             <h4>choose a chatroom:</h4>
             <ul class="chatrooms">
@@ -54,22 +54,54 @@
 
 
         <div class="controll">
-            <form>
-                <div class="msg-input">
-                    <label for="message">Your message:</label>                    
-                    <input type="text" id="message">
-                    <button>send</button>
-                </div>
-                <div class="name-input">
-                    <label for="name">Update name:</label>
-                    <input type="text" id="name">
-                    <button>update</button>
-                </div>
+            <form class="msg-input">
+                <label for="message">Your message:</label>
+                <input type="text" id="message">
+                <button name="btn">send</button>
+            </form>
+
+            <form class="name-input">
+                <label for="name">Update name:</label>
+                <input type="text" id="name">
+                <button name="btn">update</button>
             </form>
         </div>
 
 
     </div>
+
+
+    <!-- 7.22.0 makes the return object by the firestore to be unreadable
+    so i copy-paste the 5.8.4 version CDN from the net ninja github branch lesson-129 -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script> -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js"></script> -->
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCH0dWpa3X8yIemBN9oTxzoLoGGIds6PIs",
+            authDomain: "udemy-modern-javascript-6e12e.firebaseapp.com",
+            databaseURL: "https://udemy-modern-javascript-6e12e.firebaseio.com",
+            projectId: "udemy-modern-javascript-6e12e",
+            storageBucket: "udemy-modern-javascript-6e12e.appspot.com",
+            messagingSenderId: "78770982518",
+            appId: "1:78770982518:web:52fb301c20a969eadf1957",
+            measurementId: "G-54XQM4Q9VY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // firebase.analytics();
+        const db = firebase.firestore();
+    </script>
 
     <script src="scripts/chat.js"></script>
     <script src="scripts/ui.js"></script>
