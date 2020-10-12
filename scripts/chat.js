@@ -25,7 +25,7 @@ class Chat {
     }
 
     getChats(callback) {
-        this.chats
+        this.unsub = this.chats
             .where('room', '==', this.room)
             .orderBy('created_at')
             .onSnapshot(snapshot => {
@@ -36,6 +36,18 @@ class Chat {
                     }
                 });
             });
+    }
+
+    updateName(username) {
+        this.username = username;
+    }
+
+    updateRoom(room) {
+        this.room = room;
+        console.log('room updated');
+        if (this.unsub) {
+            this.unsub(); // unsubsribe from changes on the collection
+        }
     }
 }
 
