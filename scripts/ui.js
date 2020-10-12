@@ -2,20 +2,24 @@
 // clear the list of chats (when the room changes)
 
 class ChatUI {
-    constructor(list){
+    constructor(list) {
         this.list = list;
     }
-    render(chat){
+    render(chat) {
+        const when = dateFns.distanceInWordsToNow(
+            chat.created_at.toDate(),
+            { addSuffix: true } // add 'ago' keyword
+        );
         const html = `
         <li>
             <span class="content">
                 <span class="name">${chat.username}</span>
                 ${chat.message}
             </span>
-            <div class="timestamp">${chat.created_at.toDate()}</div>
+            <div class="timestamp">${when}</div>
         </li>
         `;
-        this.list.innerHTML += html; 
+        this.list.innerHTML += html;
     }
 }
 
