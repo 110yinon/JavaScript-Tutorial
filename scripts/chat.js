@@ -50,10 +50,3 @@ class Chat {
         }
     }
 }
-
-const chatroom = new Chat('gaming', 'shaun');
-// console.log(chatroom);
-
-chatroom.getChats(data => {
-    console.log(data);
-});
