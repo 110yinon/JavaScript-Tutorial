@@ -20,7 +20,7 @@ body{
     align-items: center;
     user-select: none;
 }
-h1, .chatroom, label{
+h1, .chatroom, label, .update-msg{
     text-align: center;
 }
 li{
@@ -82,4 +82,7 @@ input,label,button{
 }
 .msg-input{
     margin-bottom: 10px;
+}
+.update-msg{
+    margin: 20px auto;
 }
