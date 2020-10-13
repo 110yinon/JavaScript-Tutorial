@@ -1,20 +1,38 @@
-// rest parameter
-const double = (...nums) => {
-    console.log(nums);//coverts the spread arguments to an array
-}
+// sets
+const namesArray = ['ryu', 'chun-li', 'ryu', 'shaun'];
+console.log(namesArray);
 
-let result = double(1, 3, 5, 7, 9, 2, 4, 6, 8); // spread arguments
-result = double(1, 3, 8);
+// sets remove the duplicate items from array
 
-// spread syntax (arrays)
-const peoples = ['shuan', 'ryu', 'crystal'];
-console.log(peoples);
-console.log(...peoples);// spread out the array into it individual items
+// const nameSet = new Set(['ryu', 'chun-li', 'ryu', 'shaun']);
+const namesSet = new Set(namesArray);
+console.log(namesSet);
 
-const members = ['mario', 'chun-li', ...peoples]; // spread poeples items into members
+// convert back to array object
+const uniqueNames = [...namesSet];
+console.log(uniqueNames);
+
+// shortcut
+const uniqueNames2 = [...new Set(namesArray)];
+console.log(uniqueNames2);
 
 
-// spread syntax (objects)
-const person = { name: 'shuan', age: 30, job: 'net ninja' };
+const ages = new Set();
+ages.add(20);
+ages.add(25).add(30);
+ages.add(25);// already have - disregard
+ages.delete(30);
 
-const personClone = { location: 'manchester', ...person }; // spread the properties into this new object
+console.log(ages, ages.size);
+console.log(ages.has(20), ages.has(25));
+
+ages.clear();
+console.log(ages);
+
+const ninjas = new Set([
+    { name: 'shaun', age: 30 },
+    { name: 'crystal', age: 29 },
+    { name: 'chun-li', age: 32 },
+]);
+
+ninjas.forEach(ninja => console.log(ninja.name, ninja.age));
