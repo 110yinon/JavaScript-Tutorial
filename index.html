@@ -1,112 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Ninja Chat</title>
+    <title>More Modern Features</title>
 </head>
-
 <body>
+    
 
-    <div class="wrapper">
-
-        <h1>Ninja Chat</h1>
-
-
-        <div class="chatroom">
-            <h4>choose a chatroom:</h4>
-            <ul class="chatrooms">
-                <li id="general">#general</li>
-                <li id="gaming">#gaming</li>
-                <li id="music">#music</li>
-                <li id="ninjas">#ninjas</li>
-            </ul>
-        </div>
-
-
-        <div class="chat">
-            <ul>
-                <!-- <li>
-                    <span class="content">
-                        <span class="name">mario</span>
-                        bb love sara
-                    </span>
-                    <div class="timestamp">less then a minute ago</div>
-                </li>
-                <li>
-                    <span class="content">
-                        <span class="name">mario</span>
-                        bb love sara
-                    </span>
-                    <div class="timestamp">less then a minute ago</div>
-                </li>
-                <li>
-                    <span class="content">
-                        <span class="name">mario</span>
-                        bb love sara
-                    </span>
-                    <div class="timestamp">less then a minute ago</div>
-                </li> -->
-            </ul>
-        </div>
-
-
-        <div class="controll">
-            <form class="msg-input">
-                <label for="message">Your message:</label>
-                <input type="text" id="message">
-                <button name="btn">send</button>
-            </form>
-
-            <form class="name-input">
-                <label for="name">Update name:</label>
-                <input type="text" id="name">
-                <button name="btn">update</button>
-            </form>
-        </div>
-
-        <div class="update-msg"></div>
-
-    </div>
-
-    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
-    <!-- 7.22.0 makes the return object by the firestore to be unreadable
-    so i copy-paste the 5.8.4 version CDN from the net ninja github branch lesson-129 -->
-    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script> -->
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-analytics.js"></script> -->
-
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyCH0dWpa3X8yIemBN9oTxzoLoGGIds6PIs",
-            authDomain: "udemy-modern-javascript-6e12e.firebaseapp.com",
-            databaseURL: "https://udemy-modern-javascript-6e12e.firebaseio.com",
-            projectId: "udemy-modern-javascript-6e12e",
-            storageBucket: "udemy-modern-javascript-6e12e.appspot.com",
-            messagingSenderId: "78770982518",
-            appId: "1:78770982518:web:52fb301c20a969eadf1957",
-            measurementId: "G-54XQM4Q9VY"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        // firebase.analytics();
-        const db = firebase.firestore();
-    </script>
-
-    <script src="scripts/chat.js"></script>
-    <script src="scripts/ui.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="sandbox.js"></script>
 </body>
-
 </html>
