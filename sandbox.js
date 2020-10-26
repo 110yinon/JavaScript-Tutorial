@@ -1,38 +1,16 @@
-// sets
-const namesArray = ['ryu', 'chun-li', 'ryu', 'shaun'];
-console.log(namesArray);
+const symbolOne = Symbol('a generic name');
+const symbolTwo = Symbol('a generic name');
 
-// sets remove the duplicate items from array
+console.log(symbolOne, symbolTwo, typeof symbolOne);
+console.log(symbolOne == symbolTwo);
 
-// const nameSet = new Set(['ryu', 'chun-li', 'ryu', 'shaun']);
-const namesSet = new Set(namesArray);
-console.log(namesSet);
+const ninja = {}
 
-// convert back to array object
-const uniqueNames = [...namesSet];
-console.log(uniqueNames);
+ninja.age = 30;
+ninja['belt'] = 'orange';
+ninja['belt'] = 'black';
 
-// shortcut
-const uniqueNames2 = [...new Set(namesArray)];
-console.log(uniqueNames2);
+ninja[symbolOne] = 'ryu';
+ninja[symbolTwo] = 'shaun';
 
-
-const ages = new Set();
-ages.add(20);
-ages.add(25).add(30);
-ages.add(25);// already have - disregard
-ages.delete(30);
-
-console.log(ages, ages.size);
-console.log(ages.has(20), ages.has(25));
-
-ages.clear();
-console.log(ages);
-
-const ninjas = new Set([
-    { name: 'shaun', age: 30 },
-    { name: 'crystal', age: 29 },
-    { name: 'chun-li', age: 32 },
-]);
-
-ninjas.forEach(ninja => console.log(ninja.name, ninja.age));
+console.log(ninja);
