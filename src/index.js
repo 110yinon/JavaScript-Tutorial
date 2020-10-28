@@ -6,10 +6,9 @@ greet('mario');
 greet('luigi');
 greet('ninja');
 
-// convert it to an old js code
 // by run this command on the terminal:
 
-// node_modules/.bin/babel src/index.js -o dist/assets/bundle.js
+// node_modules/.bin/webpack
 
 // if the command does NOT work:
 // 1. the err caused by the PS/CMD security properties.
@@ -19,5 +18,5 @@ greet('ninja');
 // 4. try again the first command
 
 // OR: Go to package.json file and write the first command on "scripts"
-// e.g: "babel":node_modules/.bin/babel src/index.js -o dist/assets/bundle.js
-// and run the command on the terminal: npm run babel
+// e.g: "webpack":node_modules/.bin/webpack
+// and run the command on the terminal: npm run webpack
